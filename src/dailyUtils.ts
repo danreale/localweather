@@ -91,7 +91,7 @@ export async function wind(json: any, position: any){
 export async function windBearing(json: any, position: any){
     const val: number = json.data.daily.data[position].windBearing;
     const direction: any = getDegrees(val);
-    console.log(`Wind is coming from the ${direction}`);
+    console.log(`Wind is blowing ${direction}`);
 }
 
 function getDegrees(json: any){
@@ -99,19 +99,19 @@ function getDegrees(json: any){
 
     if ((val > 0) && (val < 90)) {
         // console.log("North East");
-        return "North East";
+        return "North East to South West";
     }
     else if ((val > 90) && (val < 180)) {
         // console.log("South East");
-        return "South East";
+        return "South East to North West";
     }
     else if ((val > 180) && (val < 270)) {
         // console.log("South West");
-        return "South West";
+        return "South West to North East";
     }
     else if ((val > 270) && (val < 360)) {
         // console.log("North West");
-        return "North West";
+        return "North West to South East";
     }
     else{
         return "No Direction";
