@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://api.darksky.net/forecast",
+    "latitude": "40.109620",
+    "longitude": "-74.111980",
+    "apiKey": "1d96eabe1f65cd46f3ac27eb1a039e77"
+}
