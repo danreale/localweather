@@ -99,6 +99,7 @@ exports.wind = wind;
 function windBearing(json, position) {
     return __awaiter(this, void 0, void 0, function* () {
         const val = json.data.hourly.data[position].windBearing;
+        console.log(`Degrees: ${val}`);
         const direction = getDegrees(val);
         console.log(`Wind is blowing ${direction}`);
     });
@@ -106,21 +107,41 @@ function windBearing(json, position) {
 exports.windBearing = windBearing;
 function getDegrees(json) {
     const val = json;
-    if ((val > 0) && (val < 90)) {
+    if ((val > 0) && (val <= 10)) {
         // console.log("North East");
+        return "North to South";
+    }
+    else if ((val > 10) && (val <= 80)) {
+        // console.log("South East");
         return "North East to South West";
     }
-    else if ((val > 90) && (val < 180)) {
+    else if ((val > 80) && (val <= 110)) {
+        // console.log("South East");
+        return "East to West";
+    }
+    else if ((val > 110) && (val <= 170)) {
         // console.log("South East");
         return "South East to North West";
     }
-    else if ((val > 180) && (val < 270)) {
+    else if ((val > 170) && (val <= 190)) {
+        // console.log("South West");
+        return "South to North";
+    }
+    else if ((val > 190) && (val <= 260)) {
         // console.log("South West");
         return "South West to North East";
     }
-    else if ((val > 270) && (val < 360)) {
+    else if ((val > 260) && (val <= 280)) {
+        // console.log("South East");
+        return "West to East";
+    }
+    else if ((val > 280) && (val <= 350)) {
         // console.log("North West");
-        return "North West to South East";
+        return "From North West to South East";
+    }
+    else if ((val > 350)) {
+        // console.log("South East");
+        return "North to South";
     }
     else {
         return "No Direction";
