@@ -117,13 +117,13 @@ function getDegrees(json: any){
 export async function getProbability(json: any, position: number){
     const val1: number = json.data.hourly.data[position].precipProbability;
     const val = val1 * 100;
-    console.log(`Precip Probability is ${val}% in ${position} minutes`);
+    console.log(`Precip Probability is ${val}% in ${position} hours`);
 }
 
 export async function getIntensity(json: any, position: number){
     const val1: number = json.data.hourly.data[position].precipIntensity;
     const val = val1 * 100;
-    console.log(`Precip Intensity is ${val} inches per hour in ${position} minutes`);
+    console.log(`Precip Intensity is ${val} inches per hour in ${position} hours`);
 }
 
 export async function getHourly(json: any, hours: number){

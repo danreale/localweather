@@ -151,7 +151,7 @@ function getProbability(json, position) {
     return __awaiter(this, void 0, void 0, function* () {
         const val1 = json.data.hourly.data[position].precipProbability;
         const val = val1 * 100;
-        console.log(`Precip Probability is ${val}% in ${position} minutes`);
+        console.log(`Precip Probability is ${val}% in ${position} hours`);
     });
 }
 exports.getProbability = getProbability;
@@ -159,7 +159,7 @@ function getIntensity(json, position) {
     return __awaiter(this, void 0, void 0, function* () {
         const val1 = json.data.hourly.data[position].precipIntensity;
         const val = val1 * 100;
-        console.log(`Precip Intensity is ${val} inches per hour in ${position} minutes`);
+        console.log(`Precip Intensity is ${val} inches per hour in ${position} hours`);
     });
 }
 exports.getIntensity = getIntensity;
